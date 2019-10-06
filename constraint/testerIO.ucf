@@ -1,0 +1,4 @@
+NET "a_out" LOC = P51 | IOSTANDARD = LVTTL;
+NET "b_out" LOC = P41 | IOSTANDARD = LVTTL;
+NET "cin_out" LOC = P35 | IOSTANDARD = LVTTL;
+

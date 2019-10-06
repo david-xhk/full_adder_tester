@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Full Adder Tester" board="Mojo" language="Lucid" version="2">
+  <files>
+    <src top="true">mojo_top.luc</src>
+    <component>reset_conditioner.luc</component>
+    <component>uart_tx.luc</component>
+    <component>spi_slave.luc</component>
+    <component>uart_rx.luc</component>
+    <src>testerfsm.luc</src>
+    <component>avr_interface.luc</component>
+    <component>cclk_detector.luc</component>
+    <constraint lib="true">io_shield.ucf</constraint>
+    <constraint>testerIO.ucf</constraint>
+    <constraint lib="true">mojo.ucf</constraint>
+  </files>
+</project>

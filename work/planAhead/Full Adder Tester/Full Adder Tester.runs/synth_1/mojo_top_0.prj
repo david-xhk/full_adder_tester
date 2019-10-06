@@ -1,0 +1,8 @@
+verilog work "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/uart_tx_7.v"
+verilog work "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/uart_rx_6.v"
+verilog work "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/spi_slave_5.v"
+verilog work "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/cclk_detector_4.v"
+verilog work "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/testerfsm_2.v"
+verilog work "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/reset_conditioner_1.v"
+verilog work "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/avr_interface_3.v"
+verilog work "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/mojo_top_0.v"

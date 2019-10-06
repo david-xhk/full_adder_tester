@@ -1,0 +1,85 @@
+module testerfsm (
+    input clk,  // clock
+    input rst,  // reset
+    
+    input a_switch,    // A switch for manual mode 
+    input b_switch,    // B switch for manual mode
+    input cin_switch,  // Cin switch for manual mode
+    input m_switch,    // M switch for toggling between manual and automatic mode
+    output a_out,      // A output to full adder
+    output b_out,      // B output to full adder
+    output cin_out     // Cin output to full adder
+  ) {
+
+  .clk(clk) {
+    .rst(rst) {
+      fsm state = {MANUAL, AUTOMATIC};  // states for tester FSM
+    }
+    
+    dff a_state[1];    // stores the previous state of a_out
+    dff b_state[1];    // stores the previous state of b_out
+    dff cin_state[1];  // stores the previous state of cin_out
+    
+    dff a_ctr[29];     // counts up to 399,999,999 (8s) for A during automatic mode
+    dff b_ctr[28];     // counts up to 199,999,999 (4s) for B during automatic mode
+    dff cin_ctr[27];   // counts up to 99,999,999 (2s) for Cin during automatic mode
+  }
+  
+  always {
+    a_out = a_state.q;      // connect stored A state to A output to full adder
+    b_out = b_state.q;      // connect stored B state to B output to full adder
+    cin_out = cin_state.q;  // connect stored Cin state to Cin output to full adder
+    
+    case (state.q) {    // FSM case statement
+      state.AUTOMATIC:  // AUTOMATIC mode: change A every 8s, B every 4s, Cin every 2s
+        
+        a_ctr.d = a_ctr.q+1;         // increment counter for A
+        if (a_ctr.q == 399999999) {  // if A counter reached max value
+          a_ctr.d = 0;               // reset A counter to 0
+          a_out = ~a_state.q;        // invert and output stored A state to full adder
+          a_state.d = ~a_state.q;    // remember the new state of A
+        }
+
+        b_ctr.d = b_ctr.q+1;         // increment counter for B
+        if (b_ctr.q == 199999999) {  // if B counter reached max value
+          b_ctr.d = 0;               // reset B counter to 0
+          b_out = ~b_state.q;        // invert and output stored B state to full adder
+          b_state.d = ~b_state.q;    // remember the new state of B
+        }
+        
+        cin_ctr.d = cin_ctr.q+1;       // increment counter for Cin
+        if (cin_ctr.q == 99999999) {   // if Cin counter reached max value
+          cin_ctr.d = 0;               // reset Cin counter to 0
+          cin_out = ~cin_state.q;      // invert and output stored Cin state to full adder
+          cin_state.d = ~cin_state.q;  // remember the new state of Cin
+        }
+       
+        if (rst) {          // if reset button pressed
+          a_ctr.d = 0;      // reset A counter to 0
+          b_ctr.d = 0;      // reset B counter to 0
+          cin_ctr.d = 0;    // reset Cin counter to 0
+          a_state.d = 0;    // reset stored A state to 0    
+          b_state.d = 0;    // reset stored B state to 0    
+          cin_state.d = 0;  // reset stored Cin state to 0   
+        }
+        
+        if (m_switch == 0)         // if M switch is turned off
+          state.d = state.MANUAL;  // change to MANUAL mode
+
+      
+      state.MANUAL:            // MANUAL mode: Switches for A, B, and Cin output directly to full adder
+        a_out = a_switch;      // connect A switch to A output to full adder
+        b_out = b_switch;      // connect B switch to B output to full adder
+        cin_out = cin_switch;  // connect Cin switch to Cin output to full adder
+        
+        if (m_switch == 1)            // if M switch is turned on
+          state.d = state.AUTOMATIC;  // change to AUTOMATIC mode
+          a_ctr.d = 0;                // reset A counter to 0
+          b_ctr.d = 0;                // reset B counter to 0
+          cin_ctr.d = 0;              // reset Cin counter to 0
+          a_state.d = 0;              // reset stored A state to 0    
+          b_state.d = 0;              // reset stored B state to 0    
+          cin_state.d = 0;            // reset stored Cin state to 0                
+    }
+  }
+}
