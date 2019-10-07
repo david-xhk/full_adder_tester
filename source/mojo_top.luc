@@ -85,30 +85,33 @@ module mojo_top (
     cin_out = myTesterFSM.cin_out;  // Cin output to full adder
     b_out = myTesterFSM.b_out;      // B output to full adder
     a_out = myTesterFSM.a_out;      // A output to full adder
-    
+
     myTesterFSM.cin_switch = io_dip[2][5];  // Cin switch for manual mode
     myTesterFSM.b_switch = io_dip[2][6];    // B switch for manual mode
     myTesterFSM.a_switch = io_dip[2][7];    // A switch for manual mode
-    myTesterFSM.m_switch = io_dip[0][0];    // M switch for toggling between manual and automatic mode
-
+    myTesterFSM.m_switch = io_dip[0][0];    // M switch for toggling between manual and automatic module
+    
     io_led[0][0] = io_dip[0][0];         // LED for M switch
     io_led[2][5] = myTesterFSM.cin_out;  // LED for Cin output to full adder
     io_led[2][6] = myTesterFSM.b_out;    // LED for B output to full adder
     io_led[2][7] = myTesterFSM.a_out;    // LED for A output to full adder
-    io_led[1][6] = s_state.q;            // LED for S input from full adder
-    io_led[1][7] = cout_state.q;         // LED for Cout input from full adder
+    
     
     if (previous_channel.q == 0) {  // if previous channel sampled was 0
       avr.channel = h1;             // set channel to sample as 1
       if (avr.sample_channel == 1)  // make sure that channel being sampled is A1
-        cout_state.d = avr.sample[9];  // save the MSB of sample from A1 into Cout state
+        s_state.d = avr.sample[9];  // save the MSB of sample from A1 into S state
         previous_channel.d = 1;     // set previous channel sampled as 1
     }
     else {                             // if previous channel sampled was 1
       avr.channel = h0;                // set channel to sample as 0
       if (avr.sample_channel == 0)     // make sure that channel being sampled is A0
-        s_state.d = avr.sample[9];  // save the MSB of sample from A0 into S state
+        cout_state.d = avr.sample[9];  // save the MSB of sample from A0 into Cout state
         previous_channel.d = 0;        // set previous channel sampled as 0
     }
+    
+    io_led[1][7] = s_state.q;            // LED for S input from full adder
+    io_led[1][6] = cout_state.q;         // LED for Cout input from full adder
+    
   }
 }
