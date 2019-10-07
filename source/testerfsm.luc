@@ -16,9 +16,9 @@ module testerfsm (
       fsm state = {MANUAL, AUTOMATIC};  // states for tester FSM
     }
     
-    dff a_state[1];    // stores the previous state of a_out
-    dff b_state[1];    // stores the previous state of b_out
-    dff cin_state[1];  // stores the previous state of cin_out
+    dff a_state[1];    // stores the previous state of A output (every 399,999,999 CLK cycles)
+    dff b_state[1];    // stores the previous state of B output (every 199,999,999 CLK cycles)
+    dff cin_state[1];  // stores the previous state of Cin output (every 99,999,999 CLK cycles)
     
     dff a_ctr[29];     // counts up to 399,999,999 (8s) for A during automatic mode
     dff b_ctr[28];     // counts up to 199,999,999 (4s) for B during automatic mode
