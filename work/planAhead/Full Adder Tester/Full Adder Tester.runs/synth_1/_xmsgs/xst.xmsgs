@@ -5,9 +5,6 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 95: Assignment to <arg fmt="%s" index="1">M_avr_new_sample</arg> ignored, since the identifier is never used
-</msg>
-
 <msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 98: Assignment to <arg fmt="%s" index="1">M_avr_tx_busy</arg> ignored, since the identifier is never used
 </msg>
 
@@ -24,9 +21,6 @@
 </msg>
 
 <msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/mojo_top_0.v</arg>&quot; line <arg fmt="%s" index="2">80</arg>: Output port &lt;<arg fmt="%s" index="3">rx_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">avr</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/mojo_top_0.v</arg>&quot; line <arg fmt="%s" index="2">80</arg>: Output port &lt;<arg fmt="%s" index="3">new_sample</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">avr</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/mojo_top_0.v</arg>&quot; line <arg fmt="%s" index="2">80</arg>: Output port &lt;<arg fmt="%s" index="3">tx_busy</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">avr</arg>&gt; is unconnected or connected to loadless signal.
@@ -87,9 +81,6 @@
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">avr/M_sampleReg_q_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mojo_top_0</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">avr/M_newSampleReg_q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mojo_top_0</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="2973" delta="new" >All outputs of instance &lt;<arg fmt="%s" index="1">avr/uart_rx</arg>&gt; of block &lt;<arg fmt="%s" index="2">uart_rx_6</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="3">mojo_top_0</arg>&gt;. Underlying logic will be removed.

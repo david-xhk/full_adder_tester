@@ -43,7 +43,6 @@ Elaborating module <spi_slave_5>.
 Elaborating module <uart_rx_6>.
 
 Elaborating module <uart_tx_7>.
-WARNING:HDLCompiler:1127 - "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 95: Assignment to M_avr_new_sample ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 98: Assignment to M_avr_tx_busy ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 99: Assignment to M_avr_rx_data ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 100: Assignment to M_avr_new_rx_data ignored, since the identifier is never used
@@ -57,12 +56,11 @@ Synthesizing Unit <mojo_top_0>.
 WARNING:Xst:647 - Input <io_button> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <io_dip<20:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 INFO:Xst:3210 - "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/mojo_top_0.v" line 80: Output port <rx_data> of the instance <avr> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/mojo_top_0.v" line 80: Output port <new_sample> of the instance <avr> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/mojo_top_0.v" line 80: Output port <tx_busy> of the instance <avr> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/usr/local/lib/alchitry-labs/Full Adder Tester/work/planAhead/Full Adder Tester/Full Adder Tester.srcs/sources_1/imports/verilog/mojo_top_0.v" line 80: Output port <new_rx_data> of the instance <avr> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <M_s_state_q>.
     Found 1-bit register for signal <M_cout_state_q>.
-    Found 1-bit register for signal <M_previous_channel_q>.
+    Found 1-bit register for signal <M_next_channel_q>.
     Summary:
 	inferred   3 D-type flip-flop(s).
 Unit <mojo_top_0> synthesized.
@@ -367,7 +365,6 @@ WARNING:Xst:2677 - Node <avr/M_sampleReg_q_3> of sequential type is unconnected 
 WARNING:Xst:2677 - Node <avr/M_sampleReg_q_2> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <avr/M_sampleReg_q_1> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <avr/M_sampleReg_q_0> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <avr/M_newSampleReg_q> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2973 - All outputs of instance <avr/uart_rx> of block <uart_rx_6> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
 
 Optimizing unit <mojo_top_0> ...
@@ -418,8 +415,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 117
- Flip-Flops                                            : 117
+# Registers                                            : 118
+ Flip-Flops                                            : 118
 
 =========================================================================
 
@@ -443,7 +440,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 117   |
+clk                                | BUFGP                  | 118   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -454,7 +451,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 4.721ns (Maximum Frequency: 211.820MHz)
+   Minimum period: 4.756ns (Maximum Frequency: 210.261MHz)
    Minimum input arrival time before clock: 3.953ns
    Maximum output required time after clock: 8.366ns
    Maximum combinational path delay: 5.979ns
