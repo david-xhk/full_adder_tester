@@ -4,7 +4,7 @@
   (keywordMap (keywordLevel 0))
   (status
     (written
-      (timestamp 2019 10 7 1 18 13)
+      (timestamp 2019 10 7 15 49 6)
       (program "Xilinx ngc2edif" (version "P.20131013"))
       (author "Xilinx. Inc ")
       (comment "This EDIF netlist is to be used within supported synthesis tools")
@@ -1344,7 +1344,7 @@
               (viewRef view_1 (cellRef LUT5 (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
               (property PK_HLUTNM (string "___XLNM___0___avr/spi_slave/_n0081_inv1") (owner "Xilinx"))
-              (property INIT (string "00000004") (owner "Xilinx"))
+              (property INIT (string "00000002") (owner "Xilinx"))
             )
             (instance M_bit_ct_q_2
               (viewRef view_1 (cellRef FD (libraryRef UNISIMS)))
@@ -1525,7 +1525,7 @@
             (net (rename M_sck_reg_q_0__ "M_sck_reg_q<0>")
               (joined
                 (portRef D (instanceRef M_sck_reg_q_1))
-                (portRef I1 (instanceRef &_n0081_inv1))
+                (portRef I0 (instanceRef &_n0081_inv1))
                 (portRef I2 (instanceRef M_bit_ct_q_2_glue_ce_renamed_34))
                 (portRef I3 (instanceRef M_done_reg_q_rstpot_renamed_39))
                 (portRef I1 (instanceRef M_miso_reg_q_glue_set_renamed_40))
@@ -1537,7 +1537,7 @@
             )
             (net (rename M_sck_reg_q_1__ "M_sck_reg_q<1>")
               (joined
-                (portRef I0 (instanceRef &_n0081_inv1))
+                (portRef I1 (instanceRef &_n0081_inv1))
                 (portRef I0 (instanceRef M_bit_ct_q_2_glue_ce_renamed_34))
                 (portRef I4 (instanceRef M_done_reg_q_rstpot_renamed_39))
                 (portRef I2 (instanceRef M_miso_reg_q_glue_set_renamed_40))
@@ -7285,13 +7285,13 @@
               (viewRef view_1 (cellRef LUT5 (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
               (property PK_HLUTNM (string "___XLNM___1____n0057_inv1") (owner "Xilinx"))
-              (property INIT (string "00000004") (owner "Xilinx"))
+              (property INIT (string "00000002") (owner "Xilinx"))
             )
             (instance (rename &_n0053_inv1 "_n0053_inv1")
               (viewRef view_1 (cellRef LUT5 (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
               (property PK_HLUTNM (string "___XLNM___1____n0057_inv1") (owner "Xilinx"))
-              (property INIT (string "00000004") (owner "Xilinx"))
+              (property INIT (string "00000002") (owner "Xilinx"))
             )
             (instance (rename io_dip_23_IBUF_renamed_300 "io_dip_23_IBUF")
               (viewRef view_1 (cellRef IBUF (libraryRef UNISIMS)))

@@ -101,13 +101,13 @@ module mojo_top (
     if (previous_channel.q == 0) {  // if previous channel sampled was 0
       avr.channel = h1;             // set channel to sample as 1
       if (avr.sample_channel == 1)  // make sure that channel being sampled is A1
-        s_state.d = avr.sample[9];  // save the MSB of sample from A1 into S state
+        cout_state.d = avr.sample[9];  // save the MSB of sample from A1 into Cout state
         previous_channel.d = 1;     // set previous channel sampled as 1
     }
     else {                             // if previous channel sampled was 1
       avr.channel = h0;                // set channel to sample as 0
       if (avr.sample_channel == 0)     // make sure that channel being sampled is A0
-        cout_state.d = avr.sample[9];  // save the MSB of sample from A0 into Cout state
+        s_state.d = avr.sample[9];  // save the MSB of sample from A0 into S state
         previous_channel.d = 0;        // set previous channel sampled as 0
     }
   }

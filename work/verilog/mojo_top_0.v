@@ -143,13 +143,13 @@ module mojo_top_0 (
     if (M_previous_channel_q == 1'h0) begin
       M_avr_channel = 4'h1;
       if (M_avr_sample_channel == 1'h1) begin
-        M_s_state_d = M_avr_sample[9+0-:1];
+        M_cout_state_d = M_avr_sample[9+0-:1];
       end
       M_previous_channel_d = 1'h1;
     end else begin
       M_avr_channel = 4'h0;
       if (M_avr_sample_channel == 1'h0) begin
-        M_cout_state_d = M_avr_sample[9+0-:1];
+        M_s_state_d = M_avr_sample[9+0-:1];
       end
       M_previous_channel_d = 1'h0;
     end
