@@ -36,21 +36,21 @@ module testerfsm (
         a_ctr.d = a_ctr.q+1;         // increment counter for A
         if (a_ctr.q == 399999999) {  // if A counter reached max value
           a_ctr.d = 0;               // reset A counter to 0
-          a_out = ~a_state.q;        // invert and output stored A state to full adder
+          a_out = ~a_state.q;        // invert and connect stored A state to A output to full adder
           a_state.d = ~a_state.q;    // remember the new state of A
         }
 
         b_ctr.d = b_ctr.q+1;         // increment counter for B
         if (b_ctr.q == 199999999) {  // if B counter reached max value
           b_ctr.d = 0;               // reset B counter to 0
-          b_out = ~b_state.q;        // invert and output stored B state to full adder
+          b_out = ~b_state.q;        // invert and connect stored B state to B output to full adder
           b_state.d = ~b_state.q;    // remember the new state of B
         }
         
         cin_ctr.d = cin_ctr.q+1;       // increment counter for Cin
         if (cin_ctr.q == 99999999) {   // if Cin counter reached max value
           cin_ctr.d = 0;               // reset Cin counter to 0
-          cin_out = ~cin_state.q;      // invert and output stored Cin state to full adder
+          cin_out = ~cin_state.q;      // invert and connect stored Cin state to Cin output to full adder
           cin_state.d = ~cin_state.q;  // remember the new state of Cin
         }
        
@@ -67,7 +67,7 @@ module testerfsm (
           state.d = state.MANUAL;  // change to MANUAL mode
 
       
-      state.MANUAL:            // MANUAL mode: Switches for A, B, and Cin output directly to full adder
+      state.MANUAL:            // MANUAL mode: switches for A, B, and Cin output directly to full adder
         a_out = a_switch;      // connect A switch to A output to full adder
         b_out = b_switch;      // connect B switch to B output to full adder
         cin_out = cin_switch;  // connect Cin switch to Cin output to full adder
